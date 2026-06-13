@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Pop | بيوتي بوب</title>
+    <!-- خط القاهرة الفخم -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. شريط الإعلانات العلوي المتحرك -->
+    <div class="announcement-bar">
+        <div class="marquee-text">
+            ✨ بمناسبة الموسم الجديد: توصيل مجاني للطلبيات فوق 150 شيكل! 🌸 عروض خاصة لطلاب الجامعة العربية الأمريكية
+            وبيرزيت والقدس المفتوحة ✨
+        </div>
+    </div>
+
+    <!-- 2. شريط التنقل العلوي (Navbar) -->
+    <header class="navbar">
+        <div class="logo">Beauty Pop 🌸</div>
+
+        <nav class="nav-links">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">الرئيسية</a>
+            <a href="#products-section">المنتجات</a>
+            <a href="#testimonials-section">آراء الجميلات</a>
+        </nav>
+
+        <div class="nav-icons" style="display: flex; align-items: center; gap: 10px;">
+            <input type="text" id="search-input" placeholder="ابحثي عن منتج... 🌸"
+                style="display: none; padding: 5px 10px; border: 1px solid #FFE5EC; border-radius: 15px; font-family: 'Cairo'; font-size: 13px; outline: none;">
+            <span class="icon" id="search-btn" style="cursor: pointer;">🔍</span>
+
+            <span class="icon" id="cart-icon-main" style="position: relative; cursor: pointer;">
+                🛒 <span id="cart-count">0</span>
+            </span>
+        </div>
+    </header>
+
+    <!-- 3. قسم الهيرو / الواجهة الرئيسية -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>تألّقي بسحر طبيعي لا يُقاوم ✨</h1>
+            <p>اكتشفي تشكيلتنا الفاخرة من مستحضرات التجميل والعناية بالبشرة المنسقة خصيصاً لتبرز جمالكِ الفريد.</p>
+            <a href="#products-section" class="btn-shop">تسوقي الآن 🌸</a>
+        </div>
+    </section>
+
+    <!-- 4. قسم المنتجات مع الفلترة الذكية -->
+    <section id="products-section" class="products-container">
+        <h2 class="section-title">أحدث طلبياتكم المفضلة ✨</h2>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="makeup">مكياج</button>
+            <button class="filter-btn" data-filter="skincare">عناية بالبشرة</button>
+        </div>
+
+        <div class="products-grid">
+
+            <!-- 1. الفونديشن -->
+            <div class="product-card" data-category="makeup">
+                <div class="product-badge">الأكثر مبيعاً</div>
+                <img src="foundation.jpg" alt="كريم أساس" class="product-img">
+                <div class="product-info">
+                    <h3>كريم أساس (فونديشن) مخملي</h3>
+                    <p class="product-category">مكياج الوجه</p>
+                    <div class="product-price-row">
+                        <span class="price">130 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. الغسول -->
+            <div class="product-card" data-category="skincare">
+                <img src="cleanser.jpg" alt="غسول البشرة" class="product-img">
+                <div class="product-info">
+                    <h3>غسول لطيف ومنظف عميق للبشرة</h3>
+                    <p class="product-category">عناية بالبشرة</p>
+                    <div class="product-price-row">
+                        <span class="price">60 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. المسكارة -->
+            <div class="product-card" data-category="makeup">
+                <img src="mascara.jpg" alt="مسكارة رموش" class="product-img">
+                <div class="product-info">
+                    <h3>مسكارة لتطويل وتكثيف الرموش الساحرة</h3>
+                    <p class="product-category">مكياج العيون</p>
+                    <div class="product-price-row">
+                        <span class="price">30 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. سيروم 1 -->
+            <div class="product-card" data-category="skincare">
+                <div class="product-badge">موصى به</div>
+                <img src="serum1.jpg" alt="سيروم نضارة" class="product-img">
+                <div class="product-info">
+                    <h3>سيروم النضارة والإشراق المكثف</h3>
+                    <p class="product-category">عناية بالبشرة</p>
+                    <div class="product-price-row">
+                        <span class="price">90 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. سيروم 2 -->
+            <div class="product-card" data-category="skincare">
+                <img src="serum2.jpg" alt="سيروم مرطب" class="product-img">
+                <div class="product-info">
+                    <h3>سيروم الترطيب العميق والترميم</h3>
+                    <p class="product-category">عناية بالبشرة</p>
+                    <div class="product-price-row">
+                        <span class="price">90 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. الماسك -->
+            <div class="product-card" data-category="skincare">
+                <div class="product-badge">جديد</div>
+                <img src="mask.jpg" alt="ماسك للوجه" class="product-img">
+                <div class="product-info">
+                    <h3>ماسك مغذي ومجدد لحيوية البشرة</h3>
+                    <p class="product-category">عناية بالبشرة</p>
+                    <div class="product-price-row">
+                        <span class="price">15 شيكل</span>
+                        <button class="add-to-cart">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. قسم آراء وتجارب الزبائن (اللي كنت بتدور عليه) -->
+    <section id="testimonials-section" class="testimonials-container">
+        <h2 class="section-title">جميلات بيوتي بوب يتألقن 🌸</h2>
+        <p class="section-subtitle">إليكِ آراء بعض زبائننا وتجاربهم مع طلبياتنا</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"الفونديشن خيالي ومخملي وبقعد طول اليوم بدون ما يقطع! والتوصيل للجامعة الأمريكية
+                    كان سريع وبنفس اليوم تقريباً. شكراً بيوتي بوب ❤️"</p>
+                <h4 class="client-name">رغد - طالبة بجامعة AAUP</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"غسول البشرة والسيروم غيروا بشرتي 180 درجة، صارلي أسبوعين بستعملهم ونضارة وجهي مش
+                    طبيعية، والمسكارة بتجنن بتطول الرموش كتير."</p>
+                <h4 class="client-name">سارة م.</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"التعامل قمة في الرقي والمنتجات أصلية ومضمونة، وأسعاركم بتناسب ميزانيتنا كطلاب
+                    جامعة. أكيد مش آخر طلبية إلي منكم ✨"</p>
+                <h4 class="client-name">لين - طالبة بجامعة بيرزيت</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. الفوتر / أسفل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 لمتجر Beauty Pop 🌸</p>
+    </footer>
+
+    <!-- 7. السلة الجانبية الذكية -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>حقيبة التسوق 🛍️</h3>
+            <span id="close-cart" class="close-cart">✕</span>
+        </div>
+        <div class="cart-sidebar-body">
+            <p class="empty-cart-msg">حقيبتك فارغة حالياً، أضيفي بعض المنتجات لتتألقي! ✨</p>
+            <ul id="cart-items-list"></ul>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="total-row">
+                <span>المجموع الإجمالي:</span>
+                <span id="cart-total-price">0 شيكل</span>
+            </div>
+            <div class="checkout-buttons-row">
+                <button id="checkout-whatsapp-btn" class="btn-checkout whatsapp"><span class="btn-icon">💬</span>
+                    واتساب</button>
+                <button id="checkout-instagram-btn" class="btn-checkout instagram"><span class="btn-icon">📸</span>
+                    إنستغرام</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. كود التشغيل والبرمجة (JavaScript) -->
+    <script>
+        let cart = [];
+        const cartCountElement = document.getElementById('cart-count');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartIconBtn = document.getElementById('cart-icon-main');
+        const cartItemsList = document.getElementById('cart-items-list');
+        const cartTotalPriceElement = document.getElementById('cart-total-price');
+        const emptyCartMsg = document.querySelector('.empty-cart-msg');
+
+        // فتح وإغلاق السلة
+        cartIconBtn.addEventListener('click', () => cartSidebar.classList.add('open'));
+        closeCartBtn.addEventListener('click', () => cartSidebar.classList.remove('open'));
+
+        // إضافة للسلة
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productCard = e.target.closest('.product-card');
+                const title = productCard.querySelector('.product-info h3').innerText;
+                const priceText = productCard.querySelector('.price').innerText;
+                const price = parseInt(priceText);
+
+                cart.push({ title, price });
+                updateCartUI();
+                showNotification(`تم إضافة ${title} إلى سلتك 🌸`);
+            });
+        });
+
+        function updateCartUI() {
+            cartCountElement.innerText = cart.length;
+            cartItemsList.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyCartMsg.style.display = 'block';
+                cartTotalPriceElement.innerText = '0 شيكل';
+            } else {
+                emptyCartMsg.style.display = 'none';
+                let total = 0;
+                cart.forEach((item) => {
+                    total += item.price;
+                    const li = document.createElement('li');
+                    li.className = 'cart-item';
+                    li.innerHTML = `<span>${item.title}</span><strong>${item.price} شيكل</strong>`;
+                    cartItemsList.appendChild(li);
+                });
+                cartTotalPriceElement.innerText = total + ' شيكل';
+            }
+        }
+
+        // إرسال للواتساب (تذكر تعديل الرقم هنا 👇)
+        document.getElementById('checkout-whatsapp-btn').addEventListener('click', () => {
+            if (cart.length === 0) { alert("سلتك فارغة!"); return; }
+            let message = "مرحباً بيوتي بوب، حابة أطلب هدول المنتجات:\n\n";
+            cart.forEach((item, i) => { message += `${i + 1}. ${item.title} - ${item.price} شيكل\n`; });
+            message += `\n*المجموع الإجمالي:* ${cartTotalPriceElement.innerText}`;
+
+            const whatsappNumber = "97256046812";
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+
+        document.getElementById('checkout-instagram-btn').addEventListener('click', () => {
+            if (cart.length === 0) { alert("سلتك فارغة!"); return; }
+            let message = "مرحباً بيوتي بوب، حابة أطلب هدول المنتجات:\n\n";
+            cart.forEach((item, i) => { message += `${i + 1}. ${item.title} - ${item.price} شيكل\n`; });
+            message += `\nالمجموع الإجمالي: ${cartTotalPriceElement.innerText}`;
+
+            navigator.clipboard.writeText(message).then(() => {
+                showNotification("تم نسخ تفاصيل طلبيتك! اعملي لها لصق في رسائل إنستغرام 🌸");
+                const instagramUser = "beauty_ppoopp"; // 👈 حط يوزر إنستغرامك هنا
+                setTimeout(() => { window.open(`https://instagram.com/${instagramUser}`, '_blank'); }, 1500);
+            });
+        });
+
+        // الفلترة الذكية
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                e.target.classList.add('active');
+                const filterValue = e.target.getAttribute('data-filter');
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // البحث الذكي
+        const searchBtn = document.getElementById('search-btn');
+        const searchInput = document.getElementById('search-input');
+        searchBtn.addEventListener('click', () => {
+            if (searchInput.style.display === 'none') {
+                searchInput.style.display = 'block'; searchInput.focus();
+            } else {
+                searchInput.style.display = 'none'; searchInput.value = '';
+                productCards.forEach(card => card.style.display = 'block');
+            }
+        });
+        searchInput.addEventListener('input', (e) => {
+            const keyword = e.target.value.toLowerCase().trim();
+            productCards.forEach(card => {
+                const title = card.querySelector('.product-info h3').innerText.toLowerCase();
+                card.style.display = title.includes(keyword) ? 'block' : 'none';
+            });
+        });
+
+        // التنبيه الوردي
+        function showNotification(message) {
+            const toast = document.createElement('div');
+            toast.innerText = message;
+            toast.style.position = 'fixed'; toast.style.top = '60px'; toast.style.left = '50%'; toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = '#FFB6C1'; toast.style.color = 'white'; toast.style.padding = '12px 25px'; toast.style.borderRadius = '30px';
+            toast.style.zIndex = '1000'; toast.style.fontFamily = "'Cairo'"; toast.style.animation = 'fadeInOut 2s ease forwards';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+    </script>
+</body>
+
+</html>
